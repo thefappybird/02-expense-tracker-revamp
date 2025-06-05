@@ -1,0 +1,35 @@
+<div class="flex-container summary-cont">
+  <app-card
+    title="Least Bought Expense"
+    [item]="unPopular?.item || 'N/A'"
+    [succ]="
+      'You have bought this expense ' +
+      ' ' +
+      (unPopular?.count | pluralize : 'time') +
+      '.'
+    "
+    fallback="You have not bought any expenses yet."
+  />
+  <app-card
+    title="Most Bought Expense"
+    [item]="popular?.item || 'N/A'"
+    [succ]="
+      'You have bought this expense ' +
+      ' ' +
+      (popular?.count | pluralize : 'time') +
+      '.'
+    "
+    fallback="You have not bought any expenses yet."
+  />
+  <app-card
+    title="Total Expenses"
+    [item]="'' + (expensesTotalPrice | currency : 'USD')"
+    [succ]="
+      'You have bought a total of ' +
+      ' ' +
+      (totalExpenses | pluralize : 'expense') +
+      '.'
+    "
+    fallback="You have not bought any expenses yet."
+  />
+</div>

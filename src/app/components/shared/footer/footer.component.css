@@ -1,0 +1,47 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  margin-top: 0.5rem;
+  background-color: transparent;
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 1rem;
+  z-index: 10; /* Ensure it stays above other content */
+}
+
+footer div {
+  gap: 0.3rem;
+}
+
+.contact {
+  gap: 0.5rem;
+}
+
+.contact p {
+  font-size: 0.8rem;
+}
+
+.links {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.links svg {
+  height: 1rem;
+}
+
+.attribution {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 0.4rem;
+  color: gray;
+  font-size: 0.75rem;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    position: unset;
+    margin-top: 0;
+  }
+}

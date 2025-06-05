@@ -1,0 +1,9 @@
+.responsive-svg {
+  width: 150px;
+  height: auto; /* maintains aspect ratio */
+}
+
+.hero-svg {
+  width: 225px;
+  height: auto; /* maintains aspect ratio */
+}

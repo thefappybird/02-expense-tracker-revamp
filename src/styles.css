@@ -1,1 +1,105 @@
-/* You can add global styles to this file, and also import other style files */
+/* Define light theme as default */
+/* styles.css or theme.css */
+
+:root {
+  --color-main: #ffffff; /* Main (primary) color */
+  --color-secondary: #f0f0f0; /* Secondary color */
+  --color-contrast: #000000; /* Text on main/secondary */
+  --color-secondary-contrast: #1f1f1f; /* Text on secondary background */
+  --color-low: #8a8a8a;
+  --color-error: #d32f2f; /* Error color */
+  --color-success: #388e3c; /* Success color */
+  --shadow: rgba(0, 0, 0, 0.37);
+}
+
+html[data-theme="dark"] {
+  --color-main: #000000; /* Main (primary) color */
+  --color-secondary: #1f1f1f; /* Secondary color */
+  --color-contrast: #ffffff; /* Text on main/secondary */
+  --color-secondary-contrast: #bdbdbd; /* Text on secondary background */
+  --color-error: #d32f2f; /* Error color */
+  --color-success: #388e3c; /* Success color */
+  --shadow: rgba(255, 255, 255, 0.185);
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--color-contrast);
+}
+
+textarea {
+  resize: none;
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--color-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+button,
+a {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:enabled:hover,
+a:hover {
+  transform: scale(1.05); /* Bigger on hover */
+}
+
+button:enabled:active,
+a:active {
+  transform: scale(0.95); /* Smaller on click */
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.default-btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.centered {
+  justify-content: center;
+  align-items: center;
+}
+
+.container-bordered {
+  padding: 1rem;
+  border: 2px solid var(--color-secondary);
+  border-radius: 0.25rem;
+}

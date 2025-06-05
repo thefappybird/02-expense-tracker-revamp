@@ -1,0 +1,17 @@
+<div class="chart-container container-bordered">
+  <h2>Expense Overview</h2>
+  @if (expenses() && expenses()?.allExpenses!.length > 0) {
+  <div class="chart-wrapper">
+    <canvas
+      baseChart
+      [datasets]="barChartData.datasets"
+      [labels]="barChartData.labels"
+      [options]="barChartOptions"
+      [type]="barChartType"
+    >
+    </canvas>
+  </div>
+  } @else {
+  <div class="no-data">No expense data available</div>
+  }
+</div>

@@ -1,0 +1,20 @@
+.btn-container {
+  margin-top: 3rem;
+  gap: 1rem;
+}
+
+.started {
+  background-color: var(--color-contrast);
+}
+
+.started p {
+  color: var(--color-main);
+}
+
+.learn {
+  background-color: var(--color-secondary);
+}
+
+.learn p {
+  color: var(--color-contrast);
+}

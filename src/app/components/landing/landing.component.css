@@ -1,0 +1,59 @@
+.main-container {
+  position: relative;
+  padding: 1.5rem;
+  min-height: 100vh;
+}
+
+/* Background layers */
+.main-container::before,
+.main-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Light theme background (default visible) */
+.main-container::before {
+  background-image: url("../../../../public/light-mode-bg.png");
+  opacity: 1;
+}
+
+/* Dark theme background (default hidden) */
+.main-container::after {
+  background-image: url("../../../../public/dark-mode-bg.png");
+  opacity: 0;
+}
+
+/* When dark theme is active */
+.main-container.dark-theme::before {
+  opacity: 0;
+}
+
+.main-container.dark-theme::after {
+  opacity: 1;
+}
+
+.content-layer {
+  position: relative;
+  height: 400px;
+  z-index: 3;
+}
+
+.main-content {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.main-content div {
+  gap: 0.5rem;
+  margin-top: 1rem;
+}

@@ -1,0 +1,39 @@
+<nav class="header flex-container">
+  <app-sections>
+    <a [routerLink]="['/']"> <app-logo /></a>
+    <a
+      [routerLink]="['/about']"
+      routerLinkActive="active-link"
+      class="nav-link"
+    >
+      About Trackr</a
+    ></app-sections
+  >
+  <app-sections>
+    @if (!isDesktop) {
+    <div class="dropdown-container">
+      <button
+        class="hamburger"
+        aria-label="Toggle navigation"
+        (click)="toggleMenu()"
+      >
+        <app-hamburger />
+      </button>
+      @if (isMenuOpen) {
+      <app-dropdown>
+        <a [routerLink]="['/about']" class="dropdown-link"> About Trackr</a>
+        <a [routerLink]="['/demo']" class="dropdown-link"> Demo</a>
+        <app-theme-picker />
+      </app-dropdown>
+      }
+    </div>
+    }@else {
+    <a [routerLink]="['/demo']" routerLinkActive="active-link" class="nav-link">
+      Demo</a
+    >
+    <div class="nav-theme">
+      <app-theme-picker />
+    </div>
+    }
+  </app-sections>
+</nav>

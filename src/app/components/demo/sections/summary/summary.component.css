@@ -1,0 +1,14 @@
+.summary-cont {
+  gap: 0.75rem;
+}
+
+app-card {
+  width: 100%;
+}
+
+@media screen and (max-width: 425px) {
+  .summary-cont {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

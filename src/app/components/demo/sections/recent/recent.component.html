@@ -1,0 +1,42 @@
+<section class="flex-vertical overview container-bordered">
+  <h2>Recent Purchases</h2>
+  <p class="subtitle">
+    You recently made {{ recentPurchases()?.length | pluralize : "purchase" }}
+  </p>
+
+  @if (expenses()) {
+  <table class="overview-table">
+    <tbody>
+      @for (purchase of paginatedPurchases(); track $index) {
+      <tr>
+        <td class="item-row">
+          <div>
+            <h4>{{ purchase.name }}</h4>
+            <p class="subtitle">{{ purchase.date }}</p>
+          </div>
+        </td>
+        <td class="item-currency">
+          <h4>{{ purchase.price | currency: `${purchase.currency}` }}</h4>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  <div class="pagination-controls">
+    <button (click)="previousPage()" [disabled]="currentPage() === 1">
+      <h3>{{ `${"<"}` }}</h3>
+    </button>
+    <h4 class="container-bordered page-wrapper">{{ currentPage() }}</h4>
+    <button
+      (click)="nextPage()"
+      [disabled]="
+        currentPage() === (recentPurchases()?.length || 0) / itemsPerPage()
+      "
+    >
+      <h3>{{ ">" }}</h3>
+    </button>
+  </div>
+  }@else {
+  <h4>No expenses found. Add an expense to view the summary.</h4>
+  }
+</section>

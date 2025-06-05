@@ -1,0 +1,65 @@
+.header {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  background-color: var(--color-contrast);
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1200px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 1px 5px var(--shadow);
+  z-index: 10001;
+}
+
+app-sections a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hamburger {
+  background-color: transparent;
+  border: none;
+}
+
+.dropdown-container {
+  position: relative;
+  display: inline-block; /* or flex if needed */
+}
+
+.dropdown-link {
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  width: 100%;
+}
+
+.nav-link,
+.nav-theme {
+  display: none;
+}
+
+.nav-link,
+.dropdown-link {
+  padding: 0.4rem;
+  border-radius: 0.3rem;
+}
+
+.dropdown-link:active,
+.nav-link:active,
+.dropdown-link:hover,
+.nav-link:hover,
+.active-link {
+  background-color: var(--color-main);
+  color: var(--color-contrast);
+}
+a:not(.active-link) {
+  color: var(--color-main);
+}
+@media (min-width: 768px) {
+  .nav-link,
+  .nav-theme {
+    display: block;
+  }
+}

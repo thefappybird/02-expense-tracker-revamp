@@ -1,0 +1,18 @@
+<div class="pie-container flex-vertical container-bordered">
+  <div class="title-section">
+    <h2>Expense Totals</h2>
+    <p class="subtitle">
+      This graph shows your total expenses per category in your registered
+      currency
+    </p>
+  </div>
+  <div class="pie-wrapper">
+    <canvas
+      baseChart
+      [data]="pieChartData"
+      [options]="pieChartOptions"
+      [type]="'pie'"
+    >
+    </canvas>
+  </div>
+</div>

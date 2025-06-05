@@ -1,0 +1,8 @@
+.summary-card p {
+  font-size: small;
+  color: var(--color-low);
+}
+
+.summary-card h4 {
+  color: var(--color-text-secondary);
+}

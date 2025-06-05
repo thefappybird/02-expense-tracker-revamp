@@ -1,0 +1,60 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center; /* Centers vertically */
+  height: 100vh;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 800px; /* Ensures text doesn't stretch too wide */
+}
+
+.about-content p {
+  line-height: 1.5;
+  font-size: 1.1rem;
+}
+
+.about-content p span {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 1.5rem;
+  }
+
+  .about-content p {
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+
+  .about-content p span {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about {
+    padding: 1rem;
+  }
+
+  .about-content p {
+    line-height: 1.5;
+    font-size: 0.9rem;
+  }
+
+  .about-content p span {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+}
