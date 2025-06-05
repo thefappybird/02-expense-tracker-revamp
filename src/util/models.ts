@@ -17,6 +17,13 @@ export interface ExpenseInfo {
   allExpenses: Expense[];
   total: number;
 }
+export interface Purchase {
+  id: string | undefined;
+  name: string;
+  price: number;
+  currency: string;
+  date: string;
+}
 
 export interface AllExpenses {
   data: ExpenseInfo;

@@ -1,0 +1,12 @@
+@for (purchase of paginatedPurchases(); track $index) {
+<tr class="row">
+  <app-expense-title [purchase]="purchase" />
+  <td class="item-currency">
+    @defer (on timer(5000ms)) {
+    <h4>{{ purchase.price | currency: `${purchase.currency}` }}</h4>
+    } @placeholder {
+    <div class="skeleton-line currency-skeleton"></div>
+    }
+  </td>
+</tr>
+}

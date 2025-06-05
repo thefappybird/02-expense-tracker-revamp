@@ -1,0 +1,19 @@
+td {
+  padding: 8px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+app-expense-title {
+  width: 100%;
+}
+.row:hover {
+  background-color: var(--color-surface-variant);
+}
+
+.currency-skeleton {
+  height: 1.2rem;
+  width: 80px;
+}

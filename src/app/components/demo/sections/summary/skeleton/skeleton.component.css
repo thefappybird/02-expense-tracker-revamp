@@ -1,0 +1,19 @@
+.card-skeleton {
+  width: 60%;
+  max-width: 200px;
+  min-width: 160px;
+}
+.card-skeleton:not(:first-child) {
+  margin-top: 0.3rem;
+}
+
+.main-skeleton {
+  height: 1.6em;
+  max-width: 250px;
+  width: 75%;
+}
+.desc-skeleton {
+  height: 1.15em;
+  max-width: 275px;
+  width: 80%;
+}

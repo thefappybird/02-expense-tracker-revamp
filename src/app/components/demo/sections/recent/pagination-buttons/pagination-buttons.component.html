@@ -1,0 +1,12 @@
+<div class="pagination-controls">
+  <button (click)="onClickPrevious()" [disabled]="currentPage() === 1">
+    <h3>{{ `${"<"}` }}</h3>
+  </button>
+  <h4 class="container-bordered page-wrapper">{{ currentPage() }}</h4>
+  <button
+    (click)="onClickNext()"
+    [disabled]="currentPage() === comparePage() / itemsPerPage()"
+  >
+    <h3>{{ ">" }}</h3>
+  </button>
+</div>

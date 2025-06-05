@@ -10,16 +10,18 @@ import { CommonModule } from '@angular/common';
 import { getAllRecentPurchases } from '../../../../../util/helpers';
 import { PluralizePipe } from '../../../../../util/pipes/pluralize.pipe';
 import { DashboardService } from '../../dashboard.service';
-interface Purchase {
-  id: string | undefined;
-  name: string;
-  price: number;
-  currency: string;
-  date: string;
-}
+import { Purchase } from '../../../../../util/models';
+import { ExpenseRowComponent } from './expense-row/expense-row.component';
+import { PaginationButtonsComponent } from './pagination-buttons/pagination-buttons.component';
+
 @Component({
   selector: 'app-recent',
-  imports: [CommonModule, PluralizePipe],
+  imports: [
+    CommonModule,
+    PluralizePipe,
+    ExpenseRowComponent,
+    PaginationButtonsComponent,
+  ],
   templateUrl: './recent.component.html',
   styleUrl: './recent.component.css',
   encapsulation: ViewEncapsulation.None,

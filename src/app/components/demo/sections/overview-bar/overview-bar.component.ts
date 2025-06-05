@@ -27,12 +27,12 @@ import {
 import { BaseChartDirective } from 'ng2-charts';
 import {
   getCategoryCounts,
-  getThemeColor,
   updateBarChartData,
   updateBarChartOptions,
 } from '../../../../../util/helpers';
 import { ThemePickerService } from '../../../shared/header/theme-picker/theme-picker.service';
 import { DashboardService } from '../../dashboard.service';
+import { ChartSkeletonComponent } from './bar-skeleton/chart-skeleton.component';
 Chart.register(
   CategoryScale,
   LinearScale,
@@ -43,14 +43,14 @@ Chart.register(
 );
 
 @Component({
-  selector: 'app-overview',
+  selector: 'app-overview-bar',
   standalone: true,
-  imports: [CommonModule, BaseChartDirective],
-  templateUrl: './overview.component.html',
-  styleUrl: './overview.component.css',
+  imports: [CommonModule, BaseChartDirective, ChartSkeletonComponent],
+  templateUrl: './overview-bar.component.html',
+  styleUrl: './overview-bar.component.css',
   encapsulation: ViewEncapsulation.None,
 })
-export class OverviewComponent implements OnDestroy {
+export class OverviewBarComponent implements OnDestroy {
   themeService = inject(ThemePickerService);
   expenses = inject(DashboardService).exposedExpenses;
   private destroyRef: EffectRef | undefined;

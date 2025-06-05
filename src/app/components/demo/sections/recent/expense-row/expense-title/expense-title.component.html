@@ -1,0 +1,10 @@
+<td class="item-row">
+  <div>
+    @defer (on timer(5000ms)) {
+    <h4>{{ purchase().name }}</h4>
+    <p class="subtitle">{{ purchase().date }}</p>
+    }@placeholder {
+    <app-expense-title-skeleton />
+    }
+  </div>
+</td>

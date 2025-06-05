@@ -1,21 +1,15 @@
-import {
-  Component,
-  computed,
-  effect,
-  inject,
-  OnInit,
-  signal,
-} from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { DashboardService } from '../../dashboard.service';
 import { CardComponent } from './card/card.component';
 import { OppExpenses } from '../../../../../util/models';
 import { findOppositeExpenses } from '../../../../../util/helpers';
 import { PluralizePipe } from '../../../../../util/pipes/pluralize.pipe';
 import { CommonModule } from '@angular/common';
+import { CardLayoutComponent } from './card-layout/card-layout.component';
 
 @Component({
   selector: 'app-summary',
-  imports: [CardComponent, PluralizePipe, CommonModule],
+  imports: [CardComponent, PluralizePipe, CommonModule, CardLayoutComponent],
   templateUrl: './summary.component.html',
   styleUrl: './summary.component.css',
 })

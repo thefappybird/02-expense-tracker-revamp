@@ -6,6 +6,7 @@
       currency
     </p>
   </div>
+  @defer (on timer(5000ms)) {
   <div class="pie-wrapper">
     <canvas
       baseChart
@@ -15,4 +16,7 @@
     >
     </canvas>
   </div>
+  } @placeholder {
+  <app-chart-skeleton [chartType]="'Pie'"></app-chart-skeleton>
+  }
 </div>

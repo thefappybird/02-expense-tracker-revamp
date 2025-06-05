@@ -1,6 +1,7 @@
 <div class="chart-container container-bordered">
   <h2>Expense Overview</h2>
-  @if (expenses() && expenses()?.allExpenses!.length > 0) {
+  @defer(on timer(5000ms)){ @if (expenses() && expenses()?.allExpenses!.length >
+  0) {
   <div class="chart-wrapper">
     <canvas
       baseChart
@@ -13,5 +14,7 @@
   </div>
   } @else {
   <div class="no-data">No expense data available</div>
+  } } @placeholder {
+  <app-chart-skeleton></app-chart-skeleton>
   }
 </div>

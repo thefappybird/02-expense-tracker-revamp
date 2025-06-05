@@ -1,0 +1,9 @@
+.bar-loading {
+  height: 280px;
+  background: transparent;
+}
+
+.spinner-text {
+  margin-top: 1rem;
+  color: var(--color-low);
+}

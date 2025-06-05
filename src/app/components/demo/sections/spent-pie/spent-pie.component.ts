@@ -17,14 +17,14 @@ import { ThemePickerService } from '../../../shared/header/theme-picker/theme-pi
 import {
   calculateCategoryTotals,
   updatePieChartData,
-  getThemeColor,
   updateChartOptions,
 } from '../../../../../util/helpers';
 import { DashboardService } from '../../dashboard.service';
+import { ChartSkeletonComponent } from '../overview-bar/bar-skeleton/chart-skeleton.component';
 
 @Component({
   selector: 'app-spent-pie',
-  imports: [BaseChartDirective],
+  imports: [BaseChartDirective, ChartSkeletonComponent],
   templateUrl: './spent-pie.component.html',
   styleUrl: './spent-pie.component.css',
   encapsulation: ViewEncapsulation.None,

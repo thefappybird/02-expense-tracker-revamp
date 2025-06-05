@@ -7,35 +7,17 @@
   @if (expenses()) {
   <table class="overview-table">
     <tbody>
-      @for (purchase of paginatedPurchases(); track $index) {
-      <tr>
-        <td class="item-row">
-          <div>
-            <h4>{{ purchase.name }}</h4>
-            <p class="subtitle">{{ purchase.date }}</p>
-          </div>
-        </td>
-        <td class="item-currency">
-          <h4>{{ purchase.price | currency: `${purchase.currency}` }}</h4>
-        </td>
-      </tr>
-      }
+      <app-expense-row
+        [paginatedPurchases]="paginatedPurchases()"
+      ></app-expense-row>
     </tbody>
   </table>
-  <div class="pagination-controls">
-    <button (click)="previousPage()" [disabled]="currentPage() === 1">
-      <h3>{{ `${"<"}` }}</h3>
-    </button>
-    <h4 class="container-bordered page-wrapper">{{ currentPage() }}</h4>
-    <button
-      (click)="nextPage()"
-      [disabled]="
-        currentPage() === (recentPurchases()?.length || 0) / itemsPerPage()
-      "
-    >
-      <h3>{{ ">" }}</h3>
-    </button>
-  </div>
+  <app-pagination-buttons
+    [currentPage]="currentPage()"
+    [comparePage]="recentPurchases()?.length || 0"
+    (previousPage)="previousPage()"
+    (nextPage)="nextPage()"
+  />
   }@else {
   <h4>No expenses found. Add an expense to view the summary.</h4>
   }

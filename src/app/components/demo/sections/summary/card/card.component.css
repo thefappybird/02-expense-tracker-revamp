@@ -1,8 +1,8 @@
-.summary-card p {
+.desc {
   font-size: small;
   color: var(--color-low);
 }
 
-.summary-card h4 {
+.title {
   color: var(--color-text-secondary);
 }
